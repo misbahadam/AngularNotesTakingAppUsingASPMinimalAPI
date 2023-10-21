@@ -1,0 +1,19 @@
+/* Style the container */
+.container {
+    margin: 20px;
+  }
+  
+  /* Style the "Delete" button (similar to previous examples) */
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  

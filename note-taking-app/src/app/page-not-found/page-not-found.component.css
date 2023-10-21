@@ -1,0 +1,16 @@
+/* Style the container */
+.container {
+    margin: 20px;
+  }
+  
+  /* Style the error message */
+  h2 {
+    color: #ff0000;
+    font-size: 24px;
+  }
+  
+  p {
+    color: #555;
+    font-size: 16px;
+  }
+  

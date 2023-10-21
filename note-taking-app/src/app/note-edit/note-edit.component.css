@@ -1,0 +1,41 @@
+/* Add styling to the container */
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  
+  /* Style the form labels */
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  /* Style the form input and textarea */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  textarea.form-control {
+    resize: vertical; /* Allow vertical resizing of the textarea */
+  }
+  
+  /* Style the Save button */
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

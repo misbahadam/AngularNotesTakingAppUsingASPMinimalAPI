@@ -1,0 +1,45 @@
+import { isDevMode } from '@angular/core';
+
+const SERVER_BASE_URL_DEVELOPMENT = 'https://localhost:7169';
+const SERVER_BASE_URL_PRODUCTION = 'https://aspnetcorereacttutorial-aspnetserver.azurewebsites.net';
+
+const BASE_ENDPOINTS = {
+  GET_ALL_NOTES: 'notes',
+  GET_NOTE_BY_ID: 'notes',
+  CREATE_NOTE: 'notes',
+  UPDATE_NOTE: 'notes',
+  DELETE_NOTE: 'notes'
+};
+
+const DEVELOPMENT_ENDPOINTS = {
+  GET_ALL_NOTES: `${SERVER_BASE_URL_DEVELOPMENT}/${BASE_ENDPOINTS.GET_ALL_NOTES}`,
+  /**
+  * Append /{id}. Example: \`${API_ENDPOINTS.GET_POST_BY_ID}/1\`
+  */
+  GET_NOTE_BY_ID: `${SERVER_BASE_URL_DEVELOPMENT}/${BASE_ENDPOINTS.GET_NOTE_BY_ID}`,
+  /**
+  * Send the post to create as an object of type PostCreateUpdateDTO in the HTTP body.
+  */
+  CREATE_NOTE: `${SERVER_BASE_URL_DEVELOPMENT}/${BASE_ENDPOINTS.CREATE_NOTE}`,
+  /**
+  * Append /{id}. Example: \`${API_ENDPOINTS.UPDATE_POST}/1\`.
+  * Send the post to update as an object of type PostCreateUpdateDTO in the HTTP body.
+  */
+  UPDATE_NOTE: `${SERVER_BASE_URL_DEVELOPMENT}/${BASE_ENDPOINTS.UPDATE_NOTE}`,
+  /**
+  * Append /{id}. Example: \`${API_ENDPOINTS.DELETE_POST}/1\`
+  */
+  DELETE_NOTE: `${SERVER_BASE_URL_DEVELOPMENT}/${BASE_ENDPOINTS.DELETE_NOTE}`
+};
+
+const PRODUCTION_ENDPOINTS = {
+  GET_ALL_NOTES: `${SERVER_BASE_URL_PRODUCTION}/${BASE_ENDPOINTS.GET_ALL_NOTES}`,
+  GET_NOTE_BY_ID: `${SERVER_BASE_URL_PRODUCTION}/${BASE_ENDPOINTS.GET_NOTE_BY_ID}`,
+  CREATE_NOTE: `${SERVER_BASE_URL_PRODUCTION}/${BASE_ENDPOINTS.CREATE_NOTE}`,
+  UPDATE_NOTE: `${SERVER_BASE_URL_PRODUCTION}/${BASE_ENDPOINTS.UPDATE_NOTE}`,
+  DELETE_NOTE: `${SERVER_BASE_URL_PRODUCTION}/${BASE_ENDPOINTS.DELETE_NOTE}`
+};
+
+const ENDPOINTS_TO_EXPORT = isDevMode() ? DEVELOPMENT_ENDPOINTS : PRODUCTION_ENDPOINTS;
+
+export default ENDPOINTS_TO_EXPORT;
