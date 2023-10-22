@@ -16,6 +16,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./Backend
 
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +26,7 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+          working-directory: ${{env.working-directory}}
 
       - name: Set up dependency caching for faster builds
         uses: actions/cache@v3
@@ -32,18 +35,21 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+          working-directory: ${{env.working-directory}}
 
       - name: Build with dotnet
-        run: dotnet build ./NoteTakingAngularApp.sln --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        working-directory: ${{env.working-directory}}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+          working-directory: ${{env.working-directory}}
 
   deploy:
     permissions:
