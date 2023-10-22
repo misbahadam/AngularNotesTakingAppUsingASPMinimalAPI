@@ -39,9 +39,9 @@ app.UseSwaggerUI(swaggerUIOptions =>
     swaggerUIOptions.RoutePrefix = string.Empty;
 });
 
-app.UseHttpsRedirection();
-
 app.UseCors("CORSPolicy");
+
+app.UseHttpsRedirection();
 
 app.MapNotesEndpoints();
 

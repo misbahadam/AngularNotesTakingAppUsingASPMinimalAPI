@@ -8,6 +8,7 @@ namespace Backend;
 public static class NotesEndPoints
 {
     // Extends WebApplication.
+    
     public static void MapNotesEndpoints(this WebApplication app)
     {
         app.MapGet("/notes", async (NoteDbContext dbContext) =>
