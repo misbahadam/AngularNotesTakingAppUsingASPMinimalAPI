@@ -1,7 +1,7 @@
 import { isDevMode } from '@angular/core';
 
 const SERVER_BASE_URL_DEVELOPMENT = 'https://localhost:7169';
-const SERVER_BASE_URL_PRODUCTION = 'https://aspnetcorereacttutorial-aspnetserver.azurewebsites.net';
+const SERVER_BASE_URL_PRODUCTION = 'https://dotnetbackendangular.azurewebsites.net';
 
 const BASE_ENDPOINTS = {
   GET_ALL_NOTES: 'notes',
